@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>New Ingredient</title>
+</head>
+<body>
+	<fieldset>
+		<legend>New Ingredient</legend>
+<h:form>
+	Name: <h:inputText value="#{ingredientBean.name}" /> <br />			
+	Unit:  <h:inputText value="#{ingredientBean.unit}" /> <br />
+	Amount:  <h:inputText value="#{ingredientBean.amount}" /> <br />
+	<h:commandButton value="Add Ingredient" action="#{ingredientBean.addIngredient()}" />
+</h:form>
+	</fieldset>
+</body>
+</html>
