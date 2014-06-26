@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>New Utensil</title>
+</head>
+<body>
+<h:form>
+<h1>Add a new recipe</h1>
+ <p>All fields are required and must contain valid information</p>
+ <h:panelGrid columns="1">
+ 
+ <h:outputText value="Recipe Name"/>
+ <h:inputText id="recipeName" required="true"
+ 	requiredMessage="Please enter a valid recipe name."
+ 	value="#{RecipeBean.heading}"
+ 	validatorMessage="Invalid e-mail address format">
+ 	<f:validateLength maximum="15" minimum="5"/>
+ </h:inputText>
+ 
+<h:outputText value="Description"/>
+<h:inputText id="recipedescription" required="true"
+requiredMessage="enter a description"
+value="#{RecipeBean.description}"
+validatorMessage="cannot be blank">
+<f:validateLength minimum="5"/>
+</h:inputText>
+
+<h:outputText value="Cooking Steps"/>
+<h:inputText id="recipesteps" required="true"
+requiredMessage="enter some cooking steps"
+value="#{RecipeBean.steps}"
+validatorMessage="cannot be blank">
+<f:validateLength minimum="5"/>
+</h:inputText>
+
+<h:outputText value="Est. Duration"/>
+<h:inputText id="recipeduration" required="true"
+requiredMessage="enter a time duration"
+value="#{RecipeBean.duration}"
+validatorMessage="cannot be blank">
+<f:validateLength minimum="1"/>
+</h:inputText>
+
+<h:outputText value="Difficulty"/>
+<h:inputText id="recipedifficulty" required="true"
+requiredMessage="enter a description"
+value="#{RecipeBean.difficulty}"
+validatorMessage="cannot be blank">
+<f:validateLength minimum="5"/>
+</h:inputText>
+
+</h:panelGrid>
+<h:commandButton value="Submit"/>
+</h:form>
+</body>
+</html>
