@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 
-@ManagedBean
+@ManagedBean(name="ingredientBean")
 public class ingredientBean {
 	private Integer amount;
 	private String unit;
@@ -35,7 +35,7 @@ public class ingredientBean {
 		this.name = name;
 	}
 	
-	public void addIngredient(){
+	public String addIngredient(){
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		Session session = null;
 		Transaction transaction = null;
@@ -48,6 +48,7 @@ public class ingredientBean {
 		i.setUnit(this.unit);
 		session.save(i);
 		transaction.commit();
+		return "index";
 	}
 	
 	
